@@ -16,5 +16,14 @@
 
 .page {
   min-inline-size: 320px;
+  max-inline-size: 1440px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), Arial, sans-serif;
+  font-variation-settings: 'wght' var(--weigth-text, 400);
+  font-size: 18px;
+  color: var(--accent-color);
+  background-color: var(--bckgrnd-color, #fff);
+  background-image: var(--bckgrnd-img);
+  background-size: cover;
+  background-attachment: fixed;
 }
