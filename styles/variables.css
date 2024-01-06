@@ -13,4 +13,8 @@
     ),
     repeating-linear-gradient(90deg, #d3d3d3, #d3d3d3 2px, transparent 2px 4px),
     linear-gradient(#e7e7e7, #1a1a1a);
+    --heart-contour-color: var(--accent-color);
+    --heart-sparks-color: red;
+    --heart-body-color: transparent;
+    --heart-core-color: transparent;
 }
