@@ -12,78 +12,87 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+@keyframes menu-arrow {
+  from {
+    transform: translate(-2px);
+  }
+  to {
+    transform: translate(2px);
+  }
+}
+
 @keyframes heart-scale {
-  
-    0% {
-        transform: scale(1);
-    }
-  
-    100% {
-        transform: scale(1.2);
-    }
+  0% {
+    transform: scale(1);
   }
-  
-  @keyframes sparks-animation {
-  
-    from {
-      opacity: 0;
-    }
-  
-    to {
-      opacity: 1;
-    }
+
+  100% {
+    transform: scale(1.2);
   }
-  
-  .sparks {
+}
+
+@keyframes sparks-animation {
+  from {
     opacity: 0;
   }
-  
-  .core {
-    transition: 0.3s;
+
+  to {
+    opacity: 1;
   }
-  
-  .contour, .main-body  {
-    transition: 0.3s 0.05s;
-  }
-  
-  .like-icon:hover .core {
-    transition-delay: 0.03s;
-    --heart-core-color: var(--accent-color);
-  }
-  
-  .like-icon:hover .main-body {
-    --heart-body-color: var(--accent-color);
-  }
-  
-  .like-icon:active .core {
-    transition-delay: 0.03s;
-    --heart-core-color: red;
-  }
-  
-  .like-icon:active .main-body {
-    --heart-body-color: red;
-  }
-  
-  .like-icon.is-liked .heart {
-    transform-origin: center;
-    animation: heart-scale 0.3s 0.1s alternate ease-in;
-  }
-  
-  .like-icon.is-liked .core {
-    transition: 0.3s;
-    --heart-core-color: red;
-  }
-  
-  .like-icon.is-liked .main-body {
-    transition: 0.3s 0.05s;
-    --heart-body-color: red;
-  }
-  
-  .like-icon.is-liked .contour {
-    transition: fill 0.1s;
-    --heart-contour-color: red;
-  }
-  
-  .like-icon.is-liked .sparks {
-    animation: sparks-animation 0.3s 0.3s alternate ease-in;
-  }
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.core {
+  transition: 0.3s;
+}
+
+.contour,
+.main-body {
+  transition: 0.3s 0.05s;
+}
+
+.like-icon:hover .core {
+  transition-delay: 0.03s;
+  --heart-core-color: var(--accent-color);
+}
+
+.like-icon:hover .main-body {
+  --heart-body-color: var(--accent-color);
+}
+
+.like-icon:active .core {
+  transition-delay: 0.03s;
+  --heart-core-color: red;
+}
+
+.like-icon:active .main-body {
+  --heart-body-color: red;
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: heart-scale 0.3s 0.1s alternate ease-in;
+}
+
+.like-icon.is-liked .core {
+  transition: 0.3s;
+  --heart-core-color: red;
+}
+
+.like-icon.is-liked .main-body {
+  transition: 0.3s 0.05s;
+  --heart-body-color: red;
+}
+
+.like-icon.is-liked .contour {
+  transition: fill 0.1s;
+  --heart-contour-color: red;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks-animation 0.3s 0.3s alternate ease-in;
+}

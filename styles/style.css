@@ -77,6 +77,46 @@
   cursor: pointer;
   font-family: var(--accent-font);
   text-transform: uppercase;
+  transition: opacity 0.3s ease;
+  position: relative;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+}
+
+.theme-menu__button:disabled {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:disabled:before {
+  content: "▶";
+  position: absolute;
+  animation: menu-arrow 500ms infinite ease-in-out alternate;
+  left: -15px;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+}
+
+.theme-menu__button:after {
+  content: "";
+  position: absolute;
+  display: block;
+  inline-size: 0%;
+  block-size: 2px;
+  background-color: var(--accent-color);
+  transition: inline-size 0.3s ease;
+  inset-block-start: 15px;
+  inset-inline-start: 5px;
+
+}
+
+.theme-menu__button:focus-visible::after {
+  inline-size: 90%;
+  opacity: 0.6;
 }
 
 .card {
