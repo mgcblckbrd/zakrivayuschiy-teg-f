@@ -33,8 +33,6 @@
   margin: 0 auto;
 }
 
-
-
 .header {
   background-color: var(--bckgrnd-color);
   inline-size: calc(100% + 4px);
@@ -111,7 +109,6 @@
   transition: inline-size 0.3s ease;
   inset-block-start: 15px;
   inset-inline-start: 5px;
-
 }
 
 .theme-menu__button:focus-visible::after {
@@ -119,10 +116,17 @@
   opacity: 0.6;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
 .card {
   background-color: var(--bckgrnd-color);
   inline-size: calc(100% + 4px);
   border: 2px solid var(--accent-color);
+  position: relative;
 }
 
 .card-title {
@@ -134,16 +138,43 @@
   padding: 5px 10px;
 }
 
-.card-img {
+.img-container {
+  block-size: 700px;
+}
+
+.card__img {
   inline-size: 100%;
   block-size: 100%;
   object-fit: cover;
 }
 
-.card__text {
-  margin-block-start: 25px;
+.card__label {
+  position: absolute;
+  top: 60px;
+  right: 23px;
+  font-family: var(--accent-font), fantasy;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: var(--weight-text);
+  text-transform: uppercase;
+  opacity: 0.5;
+  text-shadow: 0 0 1px var(--bckgrnd-color);
+  mix-blend-mode: hard-light;
+}
 
-  margin-inline-start: 25px;
+@supports (
+  (text-stroke: 1px var(--bckgrnd-color)) or
+    (-webkit-text-stroke: var(--bckgrnd-color))
+) {
+  .card__label {
+    -webkit-text-stroke: 1px var(--bckgrnd-color);
+    text-stroke: 1px var(--bckgrnd-color);
+    text-shadow: none;
+  }
+}
+
+.card__text {
+  margin: 25px;
 }
 
 .card__icons-container {
@@ -152,6 +183,10 @@
   justify-content: end;
   margin-block-start: 25px;
   margin-block-end: 23px;
+}
+
+.card__icon-button {
+  background-color: transparent;
 }
 
 .card__like-button {
@@ -168,7 +203,117 @@
   margin-inline-end: 25px;
 }
 
-.card__icon-button {
-  background-color: transparent;
+.card__like-button::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  block-size: 100%;
+  inline-size: 100%;
+  background-color: var(--accent-color);
+  display: block;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: left;
 }
 
+.card__like-button:hover::after {
+  transform: scaleX(1);
+}
+
+.card__like-button:focus {
+  outline: none;
+}
+
+.card__like-button:focus-visible {
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.button__text {
+  position: relative;
+  mix-blend-mode: difference;
+  color: var(--btn-like-color);
+  z-index: 1;
+}
+
+.footer__save-btn {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  width: 340px;
+  height: 55px;
+  border: 2px solid currentColor;
+  background-color: var(--bckgrnd-color);
+  font-family: var(--accent-font);
+  font-size: 14px;
+}
+
+.footer__save-btn .btn-floppy {
+  inline-size: 39px;
+  block-size: 39px;
+}
+
+.footer {
+  margin-block-end: 105px;
+  position: relative;
+}
+
+.btn-floppy {
+  margin-inline-start: 15px;
+  margin-block-start: 14px;
+}
+
+.footer__btn-text {
+  margin-top: -2px;
+  margin-inline-start: -15px;
+}
+
+
+.btn_decoration::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  block-size: 100%;
+  inline-size: 100%;
+  background-color: var(--accent-color);
+  display: block;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: left;
+}
+
+.btn_decoration:hover::before{
+  transform: scaleX(1);
+}
+
+.btn_decoration:focus {
+  outline: none;
+}
+
+.btn_decoration:focus-visible {
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.dialog {
+  position: fixed;
+  overflow: hidden;
+  border-width: 0;
+  background: var(--modal-color);
+  block-size: 100vb;
+  inline-size: 100vi;
+  inset: 0;
+  max-block-size: 100vb;
+  max-inline-size: 100vi;
+}
+
+.modal {
+  position: sticky;
+  border: 0.2rem solid var(--themes-main-color);
+  margin: 0 auto;
+  background-color: var(--themes-background, #fff);
+  font-family: var(--font-pressstart2p, "Courier New", fantasy);
+  inset-block-start: calc(50vb - (5.3rem / 2));
+}
+
+   
