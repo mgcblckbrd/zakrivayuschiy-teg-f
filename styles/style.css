@@ -22,7 +22,7 @@
   font-variation-settings: "wght" var(--weigth-text, 400);
   font-size: 18px;
   color: var(--accent-color);
-  background-color: var(--bckgrnd-color, #fff);
+  background-color: var(--bckgrnd-color);
   background-image: var(--bckgrnd-img);
   background-size: cover;
   background-attachment: fixed;
@@ -153,6 +153,8 @@
   block-size: 100%;
   object-fit: cover;
   object-position: center;
+
+ 
 }
 
 .brightness {
@@ -214,6 +216,7 @@
 
 .card__text {
   margin: 25px;
+ 
 }
 
 .card__icons-container {
@@ -229,6 +232,7 @@
 }
 
 .card__icon-button {
+  color: var(--accent-color);
   background-color: transparent;
   cursor: pointer;
   padding: 0;
@@ -419,8 +423,8 @@ color: var(--bckgrnd-color);
   block-size: 100vb;
   inline-size: 100vi;
   inset: 0;
-  max-block-size: 100vb;
   max-inline-size: 100vi;
+
 }
 
 .dialog::backdrop {
@@ -430,10 +434,11 @@ color: var(--bckgrnd-color);
 .modal {
   position: sticky;
   border: 0.2rem solid var(--accent-color);
-  margin: 0 auto;
   background-color: var(--bckgrnd-color, #fff);
   font-family: var(--accent-font, "Courier New", fantasy);
-  inset-block-start: calc(50vb - (5.3rem / 2));
+  margin-inline: auto;
+  margin-block-start: 50vh;
+  transform: translateY(-70%);
 }
 
 .modal__title {
@@ -460,7 +465,7 @@ color: var(--bckgrnd-color);
 }
 
 .modal__svg-floppy {
-  /* color: var(--floppy-color); */
+  color: var(--floppy-color);
   mix-blend-mode: difference;
   inline-size: 39px;
   block-size: 39px;
@@ -475,6 +480,7 @@ color: var(--bckgrnd-color);
   block-size: 38px;
   padding: 9px 17px;
   position: relative;
+  cursor: pointer;
 }
 
 .modal__dialog-form {
@@ -500,3 +506,8 @@ color: var(--bckgrnd-color);
 .modal__btn:hover::after {
   transform: scaleX(1);
 }
+
+/* 
+* {
+  border: 1px solid red;
+} */

@@ -21,7 +21,8 @@
   --weight-text: 400;
   --bckgrnd-color: #fff;
   --accent-color: #000;
-  --floppy-color: #000;
+  --floppy-color: #fff;
+  --btn-like-color: #fff;
   --bckgrnd-img: repeating-linear-gradient(
       #d3d3d3,
       #d3d3d3 2px,
@@ -32,7 +33,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root.theme-dark {
+  :root {
     --weight-title: 785;
     --weight-text: 465;
     --bckgrnd-color: #000;
