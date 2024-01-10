@@ -35,7 +35,7 @@
 
 .header {
   background-color: var(--bckgrnd-color);
-  inline-size: calc(100% + 4px);
+  /* inline-size: calc(100% + 4px); */
   border: 2px solid var(--accent-color);
   margin-block-start: 100px;
   display: flex;
@@ -128,7 +128,7 @@
 
 .card {
   background-color: var(--bckgrnd-color);
-  inline-size: calc(100% + 4px);
+  /* inline-size: calc(100% + 4px); */
   border: 2px solid var(--accent-color);
   position: relative;
 }
@@ -146,6 +146,7 @@
   max-block-size: 700px;
   border-bottom: 2px solid var(--accent-color);
   border-top: 2px solid var(--accent-color);
+  border-right: 2px solid var(--accent-color);
 }
 
 .card__img {
@@ -397,7 +398,7 @@ color: var(--bckgrnd-color);
   }
 
   .card__text {
-    inline-size: 320px;
+    inline-size: 315px;
   }
 
   .save-block__save-btn {
