@@ -146,7 +146,7 @@
   max-block-size: 700px;
   border-bottom: 2px solid var(--accent-color);
   border-top: 2px solid var(--accent-color);
-  border-right: 2px solid var(--accent-color);
+  /* border-right: 2px solid var(--accent-color); */
 }
 
 .card__img {
@@ -391,14 +391,39 @@ color: var(--bckgrnd-color);
   }
 }
 
+@media (max-width: 385px) {
+ .img-container {
+  inline-size: 372px;
+ }
+ /* .card__img {
+  inline-size: 372px;
+ } */
+
+ .first-label {
+  top: 80px;
+  right: 10px;
+ }
+}
+
 @media (max-width: 375px) {
   .img-container {
-    block-size: 375px;
-    inline-size: 373px;
+    block-size: 371px;
+    inline-size: 371px;
+  }
+
+  .card__img {
+    block-size: 371px;
   }
 
   .card__text {
     inline-size: 315px;
+    margin-top: 30px;
+ margin-bottom: 21px;
+  }
+
+  .card__icons-container {
+    margin-block-start: 20px;
+    margin-block-end: 25px;
   }
 
   .save-block__save-btn {
