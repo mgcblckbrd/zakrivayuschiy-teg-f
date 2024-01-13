@@ -128,7 +128,7 @@
 
 .card {
   background-color: var(--bckgrnd-color);
-  /* inline-size: calc(100% + 4px); */
+  inline-size: calc(100% + 4px);
   border: 2px solid var(--accent-color);
   position: relative;
 }
@@ -144,6 +144,7 @@
 
 .img-container {
   max-block-size: 700px;
+  max-inline-size: 700px;
   border-bottom: 2px solid var(--accent-color);
   border-top: 2px solid var(--accent-color);
   /* border-right: 2px solid var(--accent-color); */
@@ -154,8 +155,6 @@
   block-size: 100%;
   object-fit: cover;
   object-position: center;
-
- 
 }
 
 .brightness {
@@ -198,10 +197,14 @@
   font-size: 14px;
   font-style: normal;
   font-weight: var(--weight-text);
-  text-transform: uppercase;
+  text-transform: lowercase;
   opacity: 0.5;
   text-shadow: 0 0 1px var(--bckgrnd-color);
   mix-blend-mode: hard-light;
+}
+
+.label-up {
+  text-transform: uppercase;
 }
 
 @supports (
@@ -217,7 +220,6 @@
 
 .card__text {
   margin: 25px;
- 
 }
 
 .card__icons-container {
@@ -337,7 +339,7 @@
 }
 
 .btn_decoration:hover svg {
-color: var(--bckgrnd-color);
+  color: var(--bckgrnd-color);
   z-index: 2;
 }
 
@@ -372,9 +374,7 @@ color: var(--bckgrnd-color);
   fill: red;
 }
 
-
-
-@media (width > 375px) {
+@media (width: 375px) {
   .page {
     min-width: 375px;
     max-width: 696px;
@@ -382,6 +382,10 @@ color: var(--bckgrnd-color);
 
   .modal {
     max-width: 357px;
+  }
+
+  .card {
+    max-inline-size: 375px;
   }
 }
 
@@ -392,33 +396,41 @@ color: var(--bckgrnd-color);
 }
 
 @media (max-width: 385px) {
- .img-container {
-  inline-size: 372px;
- }
- /* .card__img {
+  .img-container {
+    inline-size: 372px;
+  }
+  /* .card__img {
   inline-size: 372px;
  } */
 
- .first-label {
-  top: 80px;
-  right: 10px;
- }
+ 
+
+  .card__label {
+    top: 60px;
+    right: 10px;
+  }
+
+  .first-label {
+    top: 80px;
+    right: 10px;
+  }
 }
 
 @media (max-width: 375px) {
   .img-container {
     block-size: 371px;
     inline-size: 371px;
+    border-bottom: 4px solid var(--accent-color);
   }
 
-  .card__img {
+  /* .card__img {
     block-size: 371px;
-  }
+  } */
 
   .card__text {
     inline-size: 315px;
     margin-top: 30px;
- margin-bottom: 21px;
+    margin-bottom: 21px;
   }
 
   .card__icons-container {
@@ -450,7 +462,6 @@ color: var(--bckgrnd-color);
   inline-size: 100vi;
   inset: 0;
   max-inline-size: 100vi;
-
 }
 
 .dialog::backdrop {
@@ -465,6 +476,7 @@ color: var(--bckgrnd-color);
   margin-inline: auto;
   margin-block-start: 50vh;
   transform: translateY(-70%);
+  max-width: 357px;
 }
 
 .modal__title {
@@ -495,7 +507,7 @@ color: var(--bckgrnd-color);
   mix-blend-mode: difference;
   inline-size: 39px;
   block-size: 39px;
-  margin-block-start: 20px;
+  margin-block-start: 15px;
 }
 
 .modal__btn {
